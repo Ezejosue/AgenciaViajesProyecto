@@ -1,0 +1,64 @@
+﻿@model AgenciaViajes.Models.Usuario;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AgenciaViajes.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-4 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Registrate
+                    </div>
+                    <div class="card-body">
+                        <form asp-controller="Inicio" asp-action="Registrarse" method="post">
+                            <input class="form-control mb-3" type="text" placeholder="Nombre" asp-for="Nombre" required />
+                            <input class="form-control mb-3" type="email" placeholder="Email" asp-for="Email" required />
+                            <input class="form-control mb-3" type="password" placeholder="password" asp-for="Contrasena" required />
+                            <select class="form-control mb-3" asp-for="TipoUsuario" required>
+                                <option value="">Selecciona un tipo de usuario</option>
+                                <option value="Invitado">Invitado</option>
+                                <option value="Registrado">Registrado</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                            <div class="d-grid gap-2 mb-3">
+                                <button class="btn btn-primary" type="submit">Registrarse</button>
+                            </div>
+                            @if (ViewData["Mensaje"] != null)
+                            {
+                                <div class="form-group">
+                                    <div class="alert alert-danger" role="alert">
+                                        @ViewData["Mensaje"]
+                                    </div>
+                                </div>
+                            }
+                            ¿Ya tienes cuenta?  <a href="@Url.Action("IniciarSesion", "Inicio")"> Iniciar Sesion</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
