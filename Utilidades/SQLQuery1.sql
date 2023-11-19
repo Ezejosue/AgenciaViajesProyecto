@@ -10,8 +10,8 @@ CREATE TABLE Usuarios (
     Nombre NVARCHAR(50),
     Email NVARCHAR(100),
     Contrasena NVARCHAR(100),
-    FechaRegistro DATETIME,
-    TipoUsuario NVARCHAR(50) -- Puede ser 'Invitado', 'Registrado', 'Administrador'
+    FechaRegistro DATETIME DEFAULT GETDATE(),
+    TipoUsuario NVARCHAR(50)
 );
 GO
 
@@ -63,3 +63,51 @@ CREATE TABLE Destinos_Aleatorios (
 GO
 
 SELECT * FROM Usuarios;
+SELECT * FROM Destinos;
+SELECT * FROM Destinos_Aleatorios;
+SELECT * FROM Actividades;
+SELECT * FROM Busquedas;
+SELECT * FROM Busquedas_Destinos;
+GO
+
+ALTER TABLE Usuarios
+ALTER COLUMN FechaRegistro DATETIME NULL;
+GO
+
+ALTER TABLE Usuarios
+ADD CONSTRAINT DF_FechaRegistro DEFAULT GETDATE() FOR FechaRegistro;
+GO
+
+INSERT INTO Destinos (Nombre, Pais, ZonaGeografica, Descripcion, ImagenURL)
+VALUES
+    ('Ciudad de Nueva York', 'Estados Unidos', 'América del Norte', 'Una ciudad icónica con rascacielos famosos.', 'imagen1.jpg'),
+    ('París', 'Francia', 'Europa', 'La Ciudad de la Luz con la Torre Eiffel.', 'imagen2.jpg'),
+    ('Kioto', 'Japón', 'Asia', 'Una ciudad histórica con templos antiguos.', 'imagen3.jpg');
+GO
+
+
+-- Insertar actividades para el destino Ciudad de Nueva York
+INSERT INTO Actividades (DestinoID, Nombre, Descripcion, Precio, Duracion)
+VALUES
+    (1, 'Recorrido por Times Square', 'Explora la animada Times Square en un recorrido guiado.', 50.00, '3 horas'),
+    (1, 'Tour por el Museo Metropolitano de Arte', 'Visita uno de los museos más grandes del mundo.', 40.00, '4 horas');
+
+-- Insertar actividades para el destino París
+INSERT INTO Actividades (DestinoID, Nombre, Descripcion, Precio, Duracion)
+VALUES
+    (2, 'Visita a la Torre Eiffel', 'Contempla las vistas panorámicas desde la icónica Torre Eiffel.', 60.00, '2 horas'),
+    (2, 'Tour por el Louvre', 'Explora el famoso Museo del Louvre y su colección de arte.', 45.00, '3 horas');
+
+-- Insertar actividades para el destino Kioto
+INSERT INTO Actividades (DestinoID, Nombre, Descripcion, Precio, Duracion)
+VALUES
+    (3, 'Visita al Templo Kinkaku-ji', 'Descubre el Templo del Pabellón Dorado en Kioto.', 35.00, '2 horas'),
+    (3, 'Tour por el Bosque de Bambú de Arashiyama', 'Pasea por el hermoso bosque de bambú de Arashiyama.', 30.00, '3 horas');
+GO
+
+-- Insertar una búsqueda para un usuario (reemplaza 'X' con el ID de usuario real)
+INSERT INTO Busquedas (UsuarioID, FechaBusqueda, ParametrosBusqueda)
+VALUES
+    (4, GETDATE(), '{"Destino": "Ciudad de Nueva York", "PrecioMax": 100.00, "DuracionMin": "2 horas"}');
+GO
+
