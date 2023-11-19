@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Dashboard Administrador</title>
+    <link href="~/dist/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/dist/css/bootstrap-datepicker.min.css" />
+    <link href="~/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding: 25px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">DAS TRAVEL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="IndexPrivado">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+            <div class="d-flex">
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <div>¡Bienvenido, @User.Identity.Name! <a class="btn btn-outline-dark" asp-action="CerrarSesion" asp-controller="Inicio">Cerrar Sesión</a></div>
+                    }
+                    else
+                    {
+                        <a asp-controller="Inicio" asp-action="IniciarSesion" class="btn btn-outline-danger me-2">Iniciar Sesión</a>
+                        <a asp-controller="Inicio" asp-action="Registrarse" class="btn btn-danger">Registrate</a>
+                    }
+                }
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    @RenderBody()
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - AgenciaViajes - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/dist/js/jquery.js"></script>
+    <script src="~/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/dist/js/funciones.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

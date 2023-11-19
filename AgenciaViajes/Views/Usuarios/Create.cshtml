@@ -1,0 +1,77 @@
+﻿@model AgenciaViajes.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<!-- Encabezado con estilo similar al de la sección principal -->
+<section class="py-5 text-center" style="background-color: #040E27;">
+    <div class="container-fluid py-lg-3">
+        <h1 class="fw-bold text-white">Crear Usuario</h1>
+    </div>
+</section>
+
+<!-- Formulario estilizado con clases de Bootstrap -->
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <!-- Campo Nombre -->
+                            <div class="form-group">
+                                <label asp-for="Nombre" class="control-label"></label>
+                                <input asp-for="Nombre" class="form-control" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+
+                            <!-- Campo Email -->
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <!-- Campo Contraseña -->
+                            <div class="form-group">
+                                <label asp-for="Contrasena" class="control-label"></label>
+                                <input asp-for="Contrasena" class="form-control" />
+                                <span asp-validation-for="Contrasena" class="text-danger"></span>
+                            </div>
+
+                            <!-- Campo Fecha de Registro -->
+                            <div class="form-group">
+                                <label asp-for="FechaRegistro" class="control-label"></label>
+                                <input asp-for="FechaRegistro" class="form-control" />
+                                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+                            </div>
+
+                            <!-- Campo Tipo de Usuario -->
+                            <div class="form-group">
+                                <label asp-for="TipoUsuario" class="control-label"></label>
+                                <input asp-for="TipoUsuario" class="form-control" />
+                                <span asp-validation-for="TipoUsuario" class="text-danger"></span>
+                            </div>
+
+                            <!-- Botones de Acción -->
+                            <div class="form-group">
+                                <input type="submit" value="Crear" class="btn btn-danger" />
+                                <a asp-action="Index" class="btn btn-outline-secondary">Volver a la lista</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

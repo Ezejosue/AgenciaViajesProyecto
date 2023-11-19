@@ -52,7 +52,8 @@ namespace AgenciaViajes.Controllers
 
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, usuario_encontrado.Nombre)
+                new Claim(ClaimTypes.Name, usuario_encontrado.Nombre),
+                new Claim(ClaimTypes.Role, usuario_encontrado.TipoUsuario)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -62,13 +63,17 @@ namespace AgenciaViajes.Controllers
                 AllowRefresh = true
             };
 
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                properties
-                );
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity),properties);
 
-            return RedirectToAction("Index", "Home");
+            if (usuario_encontrado.TipoUsuario == "Administrador")
+            {
+                return RedirectToAction("IndexPrivado", "Home");
+            }
+            else
+            {
+                // Redirigir al usuario no administrador a la página principal
+                return RedirectToAction("Index", "Home");
+            }
         }
         public async Task<IActionResult> CerrarSesion()
         {
