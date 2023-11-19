@@ -20,3 +20,38 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.logo-redondo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; /* redondea el logo */
+    display: block; /* para quita bordes */
+    margin: 0 auto; /* imagen centrada */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px; /* establece un margen entre elementos */
+}
+
+.registrate-body {
+    margin-bottom: 60px;
+    background-image: url('/img/fondo2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo-Registrate {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; /* redondea el logo */
+    display: block; /* para quita bordes */
+    margin: 0 auto; /* imagen centrada */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px; /* establece un margen entre elementos */
+}
+.body-login {
+    margin-bottom: 60px;
+    background-image: url('/img/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

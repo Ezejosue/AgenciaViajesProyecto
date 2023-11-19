@@ -42,6 +42,7 @@ namespace AgenciaViajes.Controllers
         [HttpPost]
         public async Task<IActionResult> IniciarSesion(string email, string password)
         {
+
             Usuario usuario_encontrado = await _usuarioService.GetUsuario(email,Util.encriptarClave(password));
             if (usuario_encontrado==null)
             {
@@ -69,8 +70,14 @@ namespace AgenciaViajes.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        public async Task<IActionResult> CerrarSesion()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-        
-      
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
     }
 }

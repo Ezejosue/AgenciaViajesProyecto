@@ -1,6 +1,132 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Detalle";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!-- Encabezado -->
+<section class="py-5 text-center" style="background-image: url('/dist/image/banner4.jpeg');background-size: cover;background-repeat: no-repeat;height: 400px;">
+    <div class="container-fluid py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-bold text-white">Madrid</h1>
+            <p class="lead text-white fw-bold">Aqui una descripción que va hablar sobre el destino de madrid.</p>
+            <p>
+                <a href="#" class="btn btn-danger my-2">Conocer más</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contenido de la pagina de destinos -->
+<div class="container pb-2">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-9">
+            <div class="mt-5">
+                <h3 class="font-monospace">Descripción</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, optio iste. Voluptas sit reprehenderit pariatur nihil iste dolor voluptates voluptatem quos, expedita autem libero ea voluptatum doloribus nemo ad facere!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo minima voluptatem repellat eos nesciunt. Omnis quis suscipit consectetur eos assumenda blanditiis aspernatur quam ea quisquam sint, ab doloribus voluptates modi.
+                </p>
+
+                <h3 class="font-monospace">Itinerario</h3>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Día</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro non, assumenda eaque, accusantium voluptatem quidem recusandae veritatis vitae necessitatibus exercitationem voluptatum ratione iure, nulla eligendi odit laboriosam soluta illo cupiditate.</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro non, assumenda eaque, accusantium voluptatem quidem recusandae veritatis vitae necessitatibus exercitationem voluptatum ratione iure, nulla eligendi odit laboriosam soluta illo cupiditate.</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro non, assumenda eaque, accusantium voluptatem quidem recusandae veritatis vitae necessitatibus exercitationem voluptatum ratione iure, nulla eligendi odit laboriosam soluta illo cupiditate.</td>
+                            <td>$120</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+            <div class="text-center mt-5 mb-5">
+                <h1 class="font-monospace">Contáctanos</h1>
+            </div>
+            <form action="#">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" class="form-control form-control-lg mb-3" placeholder="Nombre Completo" />
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" class="form-control form-control-lg mb-3" placeholder="Teléfono" />
+                    </div>
+                    <div class="col-lg-12">
+                        <textarea name="" id="" cols="30" rows="10" class="form-control form-control-lg mb-3" placeholder="Mensaje"></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                        <button class="btn btn-lg btn-danger" type="submit" style="width: 100%;">Enviar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Destinos Relacioandos -->
+<main>
+
+    <div class="py-5 mt-1" style="background: #ffffff !important">
+        <div class="container">
+
+            <div class="text-center mt-5 mb-5">
+                <h1 class="font-monospace">Destinos Relacionados</h1>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="~/dist/image/1.png.webp" class="card-img-top" alt="Imagen 1">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Título 1</h5>
+                            <p class="card-text" style="color: #9a9999;">Breve descripción 1.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="~/dist/image/2.png.webp" class="card-img-top" alt="Imagen 2">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Título 2</h5>
+                            <p class="card-text" style="color: #9a9999;">Breve descripción 2.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card">
+                        <img src="~/dist/image/3.png.webp" class="card-img-top" alt="Imagen 3">
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">Título 3</h5>
+                            <p class="card-text" style="color: #9a9999;">Breve descripción 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>

@@ -1,33 +1,27 @@
 ﻿@{
-    Layout = null;
+    ViewData["Title"] = "Iniciar Sesion";
 }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar Sesion</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AgenciaViajes.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <div class="container mt-5 pt-5">
+<div class="body-login">
+    <div class="container" style="height: 650px">
         <div class="row justify-content-center">
             <div class="col-12 col-xl-4 col-md-6">
-                <div class="card">
+                <div class="card mt-5" >
                     <div class="card-header">
                         Iniciar Sesion
                     </div>
                     <div class="card-body">
                         <form asp-controller="Inicio" asp-action="IniciarSesion" method="post">
-                            <input class="form-control mb-3" type="text" placeholder="Email" required name="email"/>
-                            <input class="form-control mb-3" type="password" placeholder="password" required name="password"/>
+
+                            <div class="logo-redondo">
+                                <img src="~/img/logo1.png" alt="logo" alt="logo" class="mb-3 logo-redondo" />
+                            </div>
+
+                            <input class="form-control mb-3" type="text" placeholder="Email" required name="email" />
+                            <input class="form-control mb-3" type="password" placeholder="password" required name="password" />
                             <div class="d-grid gap-2 mb-3">
                                 <button class="btn btn-primary" type="submit">Iniciar Sesion</button>
                             </div>
-                            @if(ViewData["Mensaje"]!= null)
+                            @if (ViewData["Mensaje"] != null)
                             {
                                 <div class="form-group">
                                     <div class="alert alert-danger" role="alert">
@@ -41,13 +35,8 @@
                 </div>
             </div>
         </div>
-    
+
     </div>
+</div>
 
-    <footer class="border-top footer text-muted">
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
+   
