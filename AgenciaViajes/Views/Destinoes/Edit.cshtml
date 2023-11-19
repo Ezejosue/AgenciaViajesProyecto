@@ -1,0 +1,64 @@
+﻿@model AgenciaViajes.Models.Destino
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Editar Destino";
+}
+
+<section class="py-5 text-center" style="background-color: #040E27;">
+    <div class="container-fluid py-lg-3">
+        <h1 class="fw-bold text-white">Editar Destino</h1>
+    </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="DestinoId" />
+                            <div class="form-group">
+                                <label asp-for="Nombre" class="control-label"></label>
+                                <input asp-for="Nombre" class="form-control" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Pais" class="control-label"></label>
+                                <input asp-for="Pais" class="form-control" />
+                                <span asp-validation-for="Pais" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ZonaGeografica" class="control-label"></label>
+                                <input asp-for="ZonaGeografica" class="form-control" />
+                                <span asp-validation-for="ZonaGeografica" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Descripcion" class="control-label"></label>
+                                <textarea asp-for="Descripcion" class="form-control"></textarea>
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ImagenUrl" class="control-label"></label>
+                                <input asp-for="ImagenUrl" class="form-control" />
+                                <span asp-validation-for="ImagenUrl" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Guardar" class="btn btn-danger" />
+                                <a asp-action="Index" class="btn btn-outline-secondary">Volver a la lista</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
