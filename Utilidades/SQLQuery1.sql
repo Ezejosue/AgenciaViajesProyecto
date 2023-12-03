@@ -111,3 +111,4 @@ VALUES
     (4, GETDATE(), '{"Destino": "Ciudad de Nueva York", "PrecioMax": 100.00, "DuracionMin": "2 horas"}');
 GO
 
+INSERT INTO Usuarios(Nombre, Email, Contrasena, TipoUsuario) VALUES('Administrador', 'admin@example.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Administrador');

@@ -62,7 +62,7 @@
                     <div class="col">
                         <a asp-controller="Home" asp-action="Privacy" asp-route-id="@item.DestinoId"  style="text-decoration: none !important;">
                             <div class="card">
-                                <img src="~/dist/image/@Html.DisplayFor(modelItem => item.ImagenUrl)" class="card-img-top" alt="Imagen 1">
+                                <img src="@Html.DisplayFor(modelItem => item.ImagenUrl)" class="card-img-top" alt="Imagen 1">
                                 <div class="card-body">
                                     <h5 class="card-title fw-semibold">@Html.DisplayFor(modelItem => item.Nombre)</h5>
                                     <p class="card-text" style="color: #9a9999;">
