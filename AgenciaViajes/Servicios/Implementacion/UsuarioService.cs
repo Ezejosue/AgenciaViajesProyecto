@@ -20,6 +20,14 @@ namespace AgenciaViajes.Servicios.Implementacion
             return usuario_encontrado;
         }
 
+        public async Task<Usuario> GetIDUsuario(string correo)
+        {
+            Usuario usuario_encontrado = await _context.Usuarios.Where(u => u.Email == correo)
+                .FirstOrDefaultAsync();
+            return usuario_encontrado;
+        }
+
+
         public async Task<Usuario> SaveUsuario(Usuario usuario) {
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();

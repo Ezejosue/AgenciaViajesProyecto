@@ -26,6 +26,8 @@ namespace AgenciaViajes.Controllers
                           Problem("Entity set 'AgenciaViajesContext.Destinos'  is null.");
         }
 
+
+
         // GET: Destinoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {

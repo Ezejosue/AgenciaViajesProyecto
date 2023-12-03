@@ -9,153 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AgenciaViajes
 build_property.RootNamespace = AgenciaViajes
-build_property.ProjectDir = C:\Users\kevin\Desktop\AgenciaViajesProyecto\AgenciaViajes\
+build_property.ProjectDir = E:\Proyectos\AgenciaViajesProyecto\AgenciaViajes\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\kevin\Desktop\AgenciaViajesProyecto\AgenciaViajes
+build_property.MSBuildProjectDirectory = E:\Proyectos\AgenciaViajesProyecto\AgenciaViajes
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Create.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpZGFkZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Delete.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpZGFkZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Details.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpZGFkZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Edit.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpZGFkZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Index.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Actividades/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpZGFkZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Create.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzcXVlZGFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Delete.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzcXVlZGFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Details.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzcXVlZGFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Edit.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzcXVlZGFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Index.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Busquedas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzcXVlZGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Create.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Delete.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Details.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Edit.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Index.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Destinoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Create.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub3NBbGVhdG9yaW9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Delete.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub3NBbGVhdG9yaW9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Details.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub3NBbGVhdG9yaW9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Edit.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub3NBbGVhdG9yaW9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Index.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/DestinosAleatorios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzdGlub3NBbGVhdG9yaW9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Home/Index.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Home/IndexPrivado.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Home/IndexPrivado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFByaXZhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Home/Privacy.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Inicio/IniciarSesion.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Inicio/IniciarSesion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvXEluaWNpYXJTZXNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Inicio/Registrarse.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Inicio/Registrarse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvXFJlZ2lzdHJhcnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/Error.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/_LayoutAdmin.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Create.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Delete.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Details.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Edit.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Index.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/_ViewImports.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/_ViewStart.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kevin/Desktop/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/_Layout.cshtml]
+[E:/Proyectos/AgenciaViajesProyecto/AgenciaViajes/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3zq5ihnt81

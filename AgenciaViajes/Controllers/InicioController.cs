@@ -7,7 +7,7 @@ using AgenciaViajes.Servicios.Contrato;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace AgenciaViajes.Controllers
 {
@@ -15,10 +15,12 @@ namespace AgenciaViajes.Controllers
     {
         private readonly IUsuarioService _usuarioService;
 
+
         public InicioController(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
         }
+    
 
         public IActionResult Registrarse()
         {
@@ -37,6 +39,8 @@ namespace AgenciaViajes.Controllers
             return View(); 
         }
 
+
+
         public IActionResult IniciarSesion() { return View(); }
 
         [HttpPost]
@@ -44,6 +48,7 @@ namespace AgenciaViajes.Controllers
         {
 
             Usuario usuario_encontrado = await _usuarioService.GetUsuario(email,Util.encriptarClave(password));
+
             if (usuario_encontrado==null)
             {
                 ViewData["Mensaje"] = "No se encontraron coicidencias";
@@ -53,7 +58,8 @@ namespace AgenciaViajes.Controllers
             List<Claim> claims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Name, usuario_encontrado.Nombre),
-                new Claim(ClaimTypes.Role, usuario_encontrado.TipoUsuario)
+                new Claim(ClaimTypes.Role, usuario_encontrado.TipoUsuario),
+                new Claim(ClaimTypes.Email, usuario_encontrado.Email),
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -67,10 +73,13 @@ namespace AgenciaViajes.Controllers
 
             if (usuario_encontrado.TipoUsuario == "Administrador")
             {
+
                 return RedirectToAction("IndexPrivado", "Home");
             }
             else
             {
+               
+
                 // Redirigir al usuario no administrador a la página principal
                 return RedirectToAction("Index", "Home");
             }

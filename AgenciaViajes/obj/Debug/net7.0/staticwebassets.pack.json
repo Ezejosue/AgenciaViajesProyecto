@@ -37,6 +37,22 @@
       "PackagePath": "staticwebassets\\dist\\image\\banner4.jpeg"
     },
     {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\cancun.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\cancun.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\cartagena.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\cartagena.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\francia.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\francia.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\hollywod.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\hollywod.jpg"
+    },
+    {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\imagen1.jpg",
       "PackagePath": "staticwebassets\\dist\\image\\imagen1.jpg"
     },
@@ -47,6 +63,38 @@
     {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\imagen3.jpg",
       "PackagePath": "staticwebassets\\dist\\image\\imagen3.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\kiotojpg.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\kiotojpg.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\madrid.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\madrid.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\newyork.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\newyork.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\perujpg.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\perujpg.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\riodulce.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\riodulce.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\roatan.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\roatan.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\roma.jpeg",
+      "PackagePath": "staticwebassets\\dist\\image\\roma.jpeg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\image\\semuc.jpg",
+      "PackagePath": "staticwebassets\\dist\\image\\semuc.jpg"
     },
     {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\dist\\js\\bootstrap-datepicker.min.js",
@@ -345,16 +393,72 @@
       "PackagePath": "staticwebassets\\uploads\\NY.jpg"
     },
     {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\cancun.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cancun.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\cartagena.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cartagena.jpg"
+    },
+    {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\fondo2.png",
       "PackagePath": "staticwebassets\\uploads\\fondo2.png"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\francia.jpg",
+      "PackagePath": "staticwebassets\\uploads\\francia.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\hollywod.jpg",
+      "PackagePath": "staticwebassets\\uploads\\hollywod.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\imagen1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imagen1.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\imagen3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imagen3.jpg"
     },
     {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\kioto.jpg",
       "PackagePath": "staticwebassets\\uploads\\kioto.jpg"
     },
     {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\kiotojpg.jpg",
+      "PackagePath": "staticwebassets\\uploads\\kiotojpg.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\madrid.jpg",
+      "PackagePath": "staticwebassets\\uploads\\madrid.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\newyork.jpg",
+      "PackagePath": "staticwebassets\\uploads\\newyork.jpg"
+    },
+    {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\paris.jpg",
       "PackagePath": "staticwebassets\\uploads\\paris.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\perujpg.jpg",
+      "PackagePath": "staticwebassets\\uploads\\perujpg.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\riodulce.jpg",
+      "PackagePath": "staticwebassets\\uploads\\riodulce.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\roatan.jpg",
+      "PackagePath": "staticwebassets\\uploads\\roatan.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\roma.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\roma.jpeg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\semuc.jpg",
+      "PackagePath": "staticwebassets\\uploads\\semuc.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.AgenciaViajes.Microsoft.AspNetCore.StaticWebAssets.props",
