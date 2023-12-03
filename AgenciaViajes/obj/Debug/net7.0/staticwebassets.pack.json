@@ -105,6 +105,10 @@
       "PackagePath": "staticwebassets\\img\\paris.jpg"
     },
     {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\js\\grafica1.js",
+      "PackagePath": "staticwebassets\\js\\grafica1.js"
+    },
+    {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -335,6 +339,22 @@
     {
       "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\NY.jpg",
+      "PackagePath": "staticwebassets\\uploads\\NY.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\fondo2.png",
+      "PackagePath": "staticwebassets\\uploads\\fondo2.png"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\kioto.jpg",
+      "PackagePath": "staticwebassets\\uploads\\kioto.jpg"
+    },
+    {
+      "Id": "E:\\Proyectos\\AgenciaViajesProyecto\\AgenciaViajes\\wwwroot\\uploads\\paris.jpg",
+      "PackagePath": "staticwebassets\\uploads\\paris.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.AgenciaViajes.Microsoft.AspNetCore.StaticWebAssets.props",

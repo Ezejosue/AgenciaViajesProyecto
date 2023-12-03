@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AgenciaViajes.Models;
 using AgenciaViajes.Recursos;
+using System.Text.Json;
 
 namespace AgenciaViajes.Controllers
 {
@@ -25,6 +26,82 @@ namespace AgenciaViajes.Controllers
               return _context.Usuarios != null ? 
                           View(await _context.Usuarios.ToListAsync()) :
                           Problem("Entity set 'AgenciaViajesContext.Usuarios'  is null.");
+        }
+
+        public async Task<IActionResult> IndexPrivado()
+        {
+            var tiposDeUsuarios = await _context.Usuarios
+                .GroupBy(u => u.TipoUsuario)
+                .Select(group => new
+                {
+                    Tipo = group.Key,
+                    Cantidad = group.Count()
+                })
+                .ToListAsync();
+
+            var tiposDeUsuariosJson = JsonSerializer.Serialize(tiposDeUsuarios.Select(x => x.Tipo));
+            var cantidadesJson = JsonSerializer.Serialize(tiposDeUsuarios.Select(x => x.Cantidad));
+
+            ViewBag.TiposDeUsuariosJson = tiposDeUsuariosJson;
+            ViewBag.CantidadesJson = cantidadesJson;
+
+
+            var destinosPorPais = await _context.Destinos
+               .GroupBy(d => d.Pais)
+               .Select(group => new
+               {
+                   Pais = group.Key,
+                   Cantidad = group.Count()
+               })
+               .ToListAsync();
+
+            ViewBag.DestinosPorPaisJson = JsonSerializer.Serialize(destinosPorPais.Select(x => x.Pais));
+            ViewBag.CantidadesPorPaisJson = JsonSerializer.Serialize(destinosPorPais.Select(x => x.Cantidad));
+
+            var actividadesPorPrecio = _context.Actividades
+                .AsEnumerable() // Usar AsEnumerable si la lógica de agrupación no se puede traducir a SQL
+                .GroupBy(a =>
+                {
+                    // Define los rangos de precios, por ejemplo:
+                    if (a.Precio < 50) return "Menos de $50";
+                    if (a.Precio >= 50 && a.Precio < 100) return "$50 - $99";
+                    // Agrega más rangos según sea necesario
+                    return "Más de $100";
+                })
+                .Select(group => new
+                {
+                    RangoPrecio = group.Key,
+                    Cantidad = group.Count()
+                })
+                .ToList();
+
+            ViewBag.ActividadesPorPrecioJson = JsonSerializer.Serialize(actividadesPorPrecio);
+
+
+
+
+            var registrosPorFecha = await _context.Usuarios
+              .Where(u => u.FechaRegistro != null)
+              .GroupBy(u => new { Año = u.FechaRegistro.Value.Year, Mes = u.FechaRegistro.Value.Month })
+              .Select(group => new
+              {
+                  group.Key.Año,
+                  group.Key.Mes,
+                  Cantidad = group.Count()
+              })
+              .OrderBy(x => x.Año).ThenBy(x => x.Mes)
+              .ToListAsync();
+
+            var registrosFormateados = registrosPorFecha
+                .Select(x => new
+                {
+                    Fecha = $"{x.Mes}/{x.Año}",
+                    x.Cantidad
+                })
+                .ToList();
+
+            ViewBag.RegistrosPorFechaJson = JsonSerializer.Serialize(registrosFormateados);
+            return View("/Views/Home/IndexPrivado.cshtml");
         }
 
         // GET: Usuarios/Details/5

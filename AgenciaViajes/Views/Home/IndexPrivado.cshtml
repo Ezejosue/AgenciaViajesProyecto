@@ -1,7 +1,9 @@
-﻿@{
+﻿@model IEnumerable<AgenciaViajes.Models.Usuario>
+@{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
     ViewData["Title"] = "Dashboard Administrador";
 }
+
 <!-- Encabezado del Dashboard -->
 <section class="py-5 text-center" style="background-color: #040E27;">
     <div class="container-fluid py-lg-3">
@@ -10,8 +12,6 @@
     </div>
 </section>
 
-
-
 <!-- Widgets de Resumen -->
 <div class="container mt-5">
     <!-- Aquí puedes añadir los widgets de resumen como en el ejemplo anterior -->
@@ -19,5 +19,181 @@
 
 <!-- Contenido adicional del dashboard -->
 <div class="container mt-5">
-    <!-- Aquí puedes agregar gráficos, estadísticas, enlaces rápidos, etc. -->
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Usuarios por Tipo</h2>
+            <canvas id="tipoUsuarioChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h2>Destinos por País</h2>
+            <canvas id="destinosPorPaisChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h2>Precios de Actividades</h2>
+            <canvas id="actividadesPrecioChart" width="400" height="400"></canvas>
+        </div>
+
+        <div class="col-md-6">
+            <h2>Fechas de Registro</h2>
+            <canvas id="histogramaFechasRegistro" width="400" height="400"></canvas>
+        </div>
+
+        
+    </div>
 </div>
+
+<!-- Referencia a Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx = document.getElementById('tipoUsuarioChart').getContext('2d');
+        var labelsJson = '@Html.Raw(ViewBag.TiposDeUsuariosJson)';
+        var dataJson = '@Html.Raw(ViewBag.CantidadesJson)';
+
+        if (labelsJson && dataJson) {
+            var labels = JSON.parse(labelsJson);
+            var data = JSON.parse(dataJson);
+
+            var tipoUsuarioData = {
+                labels: labels,
+                datasets: [{
+                    label: '# de Usuarios',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        // Puedes agregar más colores aquí
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        // Puedes agregar más bordes de color aquí
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            var myChart = new Chart(ctx, {
+                type: 'bar', // o 'line', 'pie', etc., según tus necesidades
+                data: tipoUsuarioData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        } else {
+            console.error('Los datos de la gráfica no están disponibles.');
+        }
+
+
+        // Gráfico de Destinos por País
+        var ctxDestinos = document.getElementById('destinosPorPaisChart').getContext('2d');
+        var destinosPaisLabels = JSON.parse('@Html.Raw(ViewBag.DestinosPorPaisJson)');
+        var destinosPaisData = JSON.parse('@Html.Raw(ViewBag.CantidadesPorPaisJson)');
+
+        var destinosPaisChart = new Chart(ctxDestinos, {
+            type: 'bar',
+            data: {
+                labels: destinosPaisLabels,
+                datasets: [{
+                    label: 'Cantidad de Destinos',
+                    data: destinosPaisData,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        // Colores para las barras
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        // Colores para los bordes de las barras
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+        // Gráfico de Precios de Actividades
+        var ctxPrecio = document.getElementById('actividadesPrecioChart').getContext('2d');
+        var precioData = JSON.parse('@Html.Raw(ViewBag.ActividadesPorPrecioJson)');
+
+        var precioChart = new Chart(ctxPrecio, {
+            type: 'bar',
+            data: {
+                labels: precioData.map(x => x.RangoPrecio),
+                datasets: [{
+                    label: 'Cantidad de Actividades',
+                    data: precioData.map(x => x.Cantidad),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        // Agrega más colores según la cantidad de rangos de precios
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        // Agrega más colores de bordes según la cantidad de rangos de precios
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+       
+
+
+        var ctxHistograma = document.getElementById('histogramaFechasRegistro').getContext('2d');
+        var datosHistograma = JSON.parse('@Html.Raw(ViewBag.RegistrosPorFechaJson)');
+
+        var histogramaChart = new Chart(ctxHistograma, {
+            type: 'bar',
+            data: {
+                labels: datosHistograma.map(x => x.Fecha),
+                datasets: [{
+                    label: 'Nuevos Registros',
+                    data: datosHistograma.map(x => x.Cantidad),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    },
+                    x: {
+                        // Configura si necesitas ajustes específicos para el eje X
+                    }
+                }
+            }
+        });
+
+    });
+</script>

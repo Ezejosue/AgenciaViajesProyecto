@@ -25,6 +25,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
 });
 
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(
+            new ResponseCacheAttribute
+            {
+                NoStore = true,
+                Location = ResponseCacheLocation.None,
+            }
+        );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,12 +51,21 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+
 app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints => {
+    endpoints.MapControllerRoute(
+        name: "IndexPrivado",
+        pattern: "Home/IndexPrivado",
+        defaults: new { controller = "Usuarios", action = "IndexPrivado" });
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();
