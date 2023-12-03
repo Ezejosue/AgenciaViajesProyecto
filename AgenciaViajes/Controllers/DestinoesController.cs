@@ -55,10 +55,25 @@ namespace AgenciaViajes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DestinoId,Nombre,Pais,ZonaGeografica,Descripcion,ImagenUrl")] Destino destino)
+        public async Task<IActionResult> Create([Bind("DestinoId,Nombre,Pais,ZonaGeografica,Descripcion,DestinoFile")] Destino destino)
         {
             if (ModelState.IsValid)
             {
+                Console.Write(destino.DestinoFile);
+
+                if (destino.DestinoFile != null && destino.DestinoFile.Length>0)
+                {
+                    var fileName = Path.GetFileName(destino.DestinoFile.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await destino.DestinoFile.CopyToAsync(fileStream);
+                    }
+
+                    destino.ImagenUrl = "/uploads/" + fileName;
+
+                }
                 _context.Add(destino);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,7 +102,7 @@ namespace AgenciaViajes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DestinoId,Nombre,Pais,ZonaGeografica,Descripcion,ImagenUrl")] Destino destino)
+        public async Task<IActionResult> Edit(int id, [Bind("DestinoId,Nombre,Pais,ZonaGeografica,Descripcion,DestinoFile")] Destino destino)
         {
             if (id != destino.DestinoId)
             {
@@ -98,7 +113,34 @@ namespace AgenciaViajes.Controllers
             {
                 try
                 {
-                    _context.Update(destino);
+                    var destinoToUpdate = await _context.Destinos.FindAsync(id);
+                    if (destinoToUpdate==null)
+                    {
+                        return NotFound();
+                    }
+
+                    if (destino.DestinoFile != null && destino.DestinoFile.Length > 0)
+                    {
+                        var fileName = Path.GetFileName(destino.DestinoFile.FileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await destino.DestinoFile.CopyToAsync(fileStream);
+                        }
+
+                        destinoToUpdate.ImagenUrl = "/uploads/" + fileName;
+
+                    }
+
+                    destinoToUpdate.Nombre = destino.Nombre;
+                    destinoToUpdate.Descripcion = destino.Descripcion;
+                    destinoToUpdate.ZonaGeografica = destino.ZonaGeografica;
+                    destinoToUpdate.Pais = destino.Pais;
+
+
+
+                    _context.Update(destinoToUpdate);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

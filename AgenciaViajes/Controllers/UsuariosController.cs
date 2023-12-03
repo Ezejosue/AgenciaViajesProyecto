@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AgenciaViajes.Models;
+using AgenciaViajes.Recursos;
 
 namespace AgenciaViajes.Controllers
 {
@@ -59,6 +60,8 @@ namespace AgenciaViajes.Controllers
         {
             if (ModelState.IsValid)
             {
+                usuario.Contrasena = Util.encriptarClave(usuario.Contrasena);
+                usuario.FechaRegistro = DateTime.Now;
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -98,6 +101,7 @@ namespace AgenciaViajes.Controllers
             {
                 try
                 {
+                    usuario.Contrasena = Util.encriptarClave(usuario.Contrasena);
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }

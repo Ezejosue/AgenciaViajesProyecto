@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AgenciaViajes.Models;
 
@@ -16,6 +17,9 @@ public partial class Destino
     public string? Descripcion { get; set; }
 
     public string? ImagenUrl { get; set; }
+
+    [NotMapped]
+    public IFormFile? DestinoFile { get; set; }
 
     public virtual ICollection<Actividade> Actividades { get; set; } = new List<Actividade>();
 

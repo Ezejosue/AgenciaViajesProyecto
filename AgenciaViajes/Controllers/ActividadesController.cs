@@ -47,7 +47,7 @@ namespace AgenciaViajes.Controllers
         // GET: Actividades/Create
         public IActionResult Create()
         {
-            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "DestinoId");
+            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "Nombre");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace AgenciaViajes.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "DestinoId", actividade.DestinoId);
+            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "Nombre", actividade.DestinoId);
             return View(actividade);
         }
 
@@ -81,7 +81,7 @@ namespace AgenciaViajes.Controllers
             {
                 return NotFound();
             }
-            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "DestinoId", actividade.DestinoId);
+            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "Nombre", actividade.DestinoId);
             return View(actividade);
         }
 
@@ -117,7 +117,7 @@ namespace AgenciaViajes.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "DestinoId", actividade.DestinoId);
+            ViewData["DestinoId"] = new SelectList(_context.Destinos, "DestinoId", "Nombre", actividade.DestinoId);
             return View(actividade);
         }
 

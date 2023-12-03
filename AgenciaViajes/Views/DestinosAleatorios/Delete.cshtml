@@ -1,0 +1,50 @@
+﻿@model AgenciaViajes.Models.DestinosAleatorio
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="py-5 text-center" style="background-color: #040E27;">
+    <div class="container-fluid py-lg-3">
+        <h1 class="fw-bold text-white">Eliminar Destino Aleatorio</h1>
+    </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="text-center">¿Estás seguro de que quieres eliminar esto?</h3>
+                        <div>
+                            <h4>Destino Aleatorio</h4>
+                            <hr />
+                            <dl class="row">
+                                <dt class="col-sm-2">
+                                    @Html.DisplayNameFor(model => model.FechaGeneracion)
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.FechaGeneracion)
+                                </dd>
+                                <dt class="col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Destino)
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.Destino.Nombre)
+                                </dd>
+                            </dl>
+
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="DestinoAleatorioId" />
+                                <input type="submit" value="Eliminar" class="btn btn-danger" />
+                                <a asp-action="Index" class="btn btn-outline-secondary">Volver a la lista</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

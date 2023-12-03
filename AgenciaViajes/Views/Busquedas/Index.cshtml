@@ -1,0 +1,71 @@
+﻿@model IEnumerable<AgenciaViajes.Models.Busqueda>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="py-5 text-center" style="background-color: #040E27;">
+    <div class="container-fluid py-lg-3">
+        <h1 class="fw-bold text-white">Listado de Búsquedas</h1>
+    </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <p>
+                            <a asp-action="Create" class="btn btn-danger">Crear Nueva</a>
+                        </p>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FechaBusqueda)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ParametrosBusqueda)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Usuario)
+                                    </th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FechaBusqueda)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ParametrosBusqueda)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Usuario.Email)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.BusquedaId" class="btn btn-outline-secondary btn-sm">Editar</a>
+                                            <a asp-action="Details" asp-route-id="@item.BusquedaId" class="btn btn-outline-secondary btn-sm">Detalles</a>
+                                            <a asp-action="Delete" asp-route-id="@item.BusquedaId" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

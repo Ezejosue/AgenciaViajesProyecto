@@ -37,7 +37,13 @@
                                 <td>@Html.DisplayFor(modelItem => item.Pais)</td>
                                 <td>@Html.DisplayFor(modelItem => item.ZonaGeografica)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
-                                <td>@Html.DisplayFor(modelItem => item.ImagenUrl)</td>
+                                <td>
+                                    @if (item.ImagenUrl != null)
+                                    {
+                                        <img src="@item.ImagenUrl" alt="Destino" style="width:100px; height:auto;" />
+
+                                    }
+                                </td>
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.DestinoId" class="btn btn-outline-secondary btn-sm">Editar</a>
                                     <a asp-action="Details" asp-route-id="@item.DestinoId" class="btn btn-outline-secondary btn-sm">Detalles</a>
