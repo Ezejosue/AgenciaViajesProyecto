@@ -1,13 +1,16 @@
-﻿@{
+﻿@model AgenciaViajes.Models.DestinoActividadViewModel
+
+
+@{
     ViewData["Title"] = "Detalle";
 }
 
 <!-- Encabezado -->
-<section class="py-5 text-center" style="background-image: url('/dist/image/banner4.jpeg');background-size: cover;background-repeat: no-repeat;height: 400px;">
+<section class="py-5 text-center" style="background-image: url('/dist/image/@Model.Destino.ImagenUrl');background-size: cover;background-repeat: no-repeat;height: 400px;">
     <div class="container-fluid py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-bold text-white">Madrid</h1>
-            <p class="lead text-white fw-bold">Aqui una descripción que va hablar sobre el destino de madrid.</p>
+            <h1 class="fw-bold text-white">@Model.Destino.Nombre</h1>
+            <p class="lead text-white fw-bold">@Model.Destino.Descripcion</p>
             <p>
                 <a href="#" class="btn btn-danger my-2">Conocer más</a>
             </p>
@@ -21,46 +24,51 @@
         <div class="col-lg-8 col-md-9">
             <div class="mt-5">
                 <h3 class="font-monospace">Descripción</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, optio iste. Voluptas sit reprehenderit pariatur nihil iste dolor voluptates voluptatem quos, expedita autem libero ea voluptatum doloribus nemo ad facere!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo minima voluptatem repellat eos nesciunt. Omnis quis suscipit consectetur eos assumenda blanditiis aspernatur quam ea quisquam sint, ab doloribus voluptates modi.
-                </p>
+                <p>País: <b>@Model.Destino.Pais</b></p>
+                <p>Zona Geografica: <b>@Model.Destino.ZonaGeografica</b></p>
+                <p>@Model.Destino.Descripcion</p>
 
-                <h3 class="font-monospace">Itinerario</h3>
-
+                <h3 class="font-monospace">Actividades</h3>
+               
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Día</th>
+                            <th scope="col">Nombre</th>
                             <th scope="col">Descripción</th>
                             <th scope="col">Precio</th>
+                            <th scope="col">Duración</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro non, assumenda eaque, accusantium voluptatem quidem recusandae veritatis vitae necessitatibus exercitationem voluptatum ratione iure, nulla eligendi odit laboriosam soluta illo cupiditate.</td>
-                            <td>$100</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro non, assumenda eaque, accusantium voluptatem quidem recusandae veritatis vitae necessitatibus exercitationem voluptatum ratione iure, nulla eligendi odit laboriosam soluta illo cupiditate.</td>
-                            <td>$150</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro non, assumenda eaque, accusantium voluptatem quidem recusandae veritatis vitae necessitatibus exercitationem voluptatum ratione iure, nulla eligendi odit laboriosam soluta illo cupiditate.</td>
-                            <td>$120</td>
-                        </tr>
+                        @if (Model.Actividades != null && Model.Actividades.Any())
+                        {
+                            @foreach (var actividad in Model.Actividades)
+                            {
+                                <tr>
+                                    <th>@actividad.Nombre</th>
+                                    <td>@actividad.Descripcion</td>
+                                    <td>$@actividad.Precio</td>
+                                    <td>@actividad.Duracion</td>
+                                </tr>
+                            }
+                           
+                        }
+                        else
+                        {
+                            <tr colspan="4">
+                                <th>No hay actividades disponibles.</th>
+                            </tr>
+                        }
+                        
                     </tbody>
                 </table>
             </div>
 
-            <hr>
+            <!--hr>
             <div class="text-center mt-5 mb-5">
                 <h1 class="font-monospace">Contáctanos</h1>
             </div>
-            <form action="#">
+            <form-- action="#">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <input type="text" class="form-control form-control-lg mb-3" placeholder="Nombre Completo" />
@@ -75,7 +83,7 @@
                         <button class="btn btn-lg btn-danger" type="submit" style="width: 100%;">Enviar</button>
                     </div>
                 </div>
-            </form>
+            </form-->
 
         </div>
     </div>
@@ -92,38 +100,32 @@
             </div>
 
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Card 1 -->
-                <div class="col">
-                    <div class="card">
-                        <img src="~/dist/image/1.png.webp" class="card-img-top" alt="Imagen 1">
-                        <div class="card-body">
-                            <h5 class="card-title fw-semibold">Título 1</h5>
-                            <p class="card-text" style="color: #9a9999;">Breve descripción 1.</p>
+                
+                @if (Model.destinosRandom != null && Model.destinosRandom.Any())
+                {
+                    @foreach (var destindom in Model.destinosRandom)
+                    {
+                        <div class="col">
+                            <a asp-controller="Home" asp-action="Privacy" asp-route-id="@destindom.DestinoId" style="text-decoration: none !important;">
+                                <div class="card">
+                                    <img src="~/dist/image/@Html.DisplayFor(modelItem => destindom.ImagenUrl)" class="card-img-top" alt="Imagen 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-semibold">@Html.DisplayFor(modelItem => destindom.Nombre)</h5>
+                                        <p class="card-text" style="color: #9a9999;">
+                                            @Html.DisplayFor(modelItem => destindom.Descripcion)
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                </div>
+                    }
 
-                <!-- Card 2 -->
-                <div class="col">
-                    <div class="card">
-                        <img src="~/dist/image/2.png.webp" class="card-img-top" alt="Imagen 2">
-                        <div class="card-body">
-                            <h5 class="card-title fw-semibold">Título 2</h5>
-                            <p class="card-text" style="color: #9a9999;">Breve descripción 2.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col">
-                    <div class="card">
-                        <img src="~/dist/image/3.png.webp" class="card-img-top" alt="Imagen 3">
-                        <div class="card-body">
-                            <h5 class="card-title fw-semibold">Título 3</h5>
-                            <p class="card-text" style="color: #9a9999;">Breve descripción 3.</p>
-                        </div>
-                    </div>
-                </div>
+                }
+                else
+                {
+                    //no mostrar nada porque no hay destinos
+                }
+                
             </div>
 
         </div>

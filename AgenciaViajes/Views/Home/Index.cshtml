@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<AgenciaViajes.Models.Destino>
+
+@{
     ViewData["Title"] = "Inicio";
 }
 
@@ -54,45 +56,23 @@
             </div>
 
             <div class="row row-cols-1 row-cols-md-3 g-4">
-
-                <!-- Card 1 -->
-                <div class="col">
-                    <a asp-controller="Home" asp-action="Privacy" style="text-decoration: none !important;">
-                        <div class="card">
-                            <img src="~/dist/image/1.png.webp" class="card-img-top" alt="Imagen 1">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold">Título 1</h5>
-                                <p class="card-text" style="color: #9a9999;">Breve descripción 1.</p>
+                
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <a asp-controller="Home" asp-action="Privacy" asp-route-id="@item.DestinoId"  style="text-decoration: none !important;">
+                            <div class="card">
+                                <img src="~/dist/image/@Html.DisplayFor(modelItem => item.ImagenUrl)" class="card-img-top" alt="Imagen 1">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-semibold">@Html.DisplayFor(modelItem => item.Nombre)</h5>
+                                    <p class="card-text" style="color: #9a9999;">
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col">
-                    <a asp-controller="Home" asp-action="Privacy" style="text-decoration: none !important;">
-                        <div class="card">
-                            <img src="~/dist/image/2.png.webp" class="card-img-top" alt="Imagen 1">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold">Título 2</h5>
-                                <p class="card-text" style="color: #9a9999;">Breve descripción 2.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col">
-                    <a asp-controller="Home" asp-action="Privacy" style="text-decoration: none !important;">
-                        <div class="card">
-                            <img src="~/dist/image/3.png.webp" class="card-img-top" alt="Imagen 1">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold">Título 3</h5>
-                                <p class="card-text" style="color: #9a9999;">Breve descripción 3.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                }
 
             </div>
 
