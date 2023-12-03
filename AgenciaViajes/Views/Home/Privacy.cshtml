@@ -6,7 +6,7 @@
 }
 
 <!-- Encabezado -->
-<section class="py-5 text-center" style="background-image: url('/dist/image/@Model.Destino.ImagenUrl');background-size: cover;background-repeat: no-repeat;height: 400px;">
+<section class="py-5 text-center" style="background-image: url('@Model.Destino.ImagenUrl');background-size: cover;background-repeat: no-repeat;height: 400px;">
     <div class="container-fluid py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-bold text-white">@Model.Destino.Nombre</h1>
@@ -108,7 +108,7 @@
                         <div class="col">
                             <a asp-controller="Home" asp-action="Privacy" asp-route-id="@destindom.DestinoId" style="text-decoration: none !important;">
                                 <div class="card">
-                                    <img src="~/dist/image/@Html.DisplayFor(modelItem => destindom.ImagenUrl)" class="card-img-top" alt="Imagen 1">
+                                    <img src="@Html.DisplayFor(modelItem => destindom.ImagenUrl)" class="card-img-top" alt="Imagen 1">
                                     <div class="card-body">
                                         <h5 class="card-title fw-semibold">@Html.DisplayFor(modelItem => destindom.Nombre)</h5>
                                         <p class="card-text" style="color: #9a9999;">
